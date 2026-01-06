@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chovatelská stanice El Mirlando</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="javascript:void(0)" onclick="openModal('about')">O NÁS</a></li>
+            <li><a href="javascript:void(0)" onclick="openModal('dogs')">ATTINKA</a></li>
+            <li><a href="javascript:void(0)" onclick="openModal('contact')">KONTAKT</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h2 style="color: #ffd700; letter-spacing: 5px; margin-bottom: 0;">Chovatelská stanice</h2>
+            <h1>EL MIRLANDO</h1>
+            <p>Zlaté sheltie se srdcem pro sport a krásu</p>
+        </div>
+    </div>
+
+    <div id="about" class="modal">
+        <div class="modal-content">
+            <h2>O stanici El Mirlando</h2>
+            <p>V naší chovatelské stanici *El Mirlando* klademe velký důraz na to, aby naše sheltie vyrůstaly v milujícím domácím prostředí. Jsou to pro nás především členové rodiny. Naším cílem je odchovávat zdravá, socializovaná a sebevědomá štěňátka.</p>
+            <p>Sheltie nás okouzlily svou inteligencí a chutí do práce, což je přesně to, co se snažíme v našem chovu podporovat.</p>
+            <button class="close-btn" onclick="closeModal('about')">Zpět</button>
+        </div>
+    </div>
+
+    <div id="dogs" class="modal">
+        <div class="modal-content">
+            <h2>Naše fenka Attinka</h2>
+            <p><strong>Attinka</strong> je 4letá zlatá fenka, která je základem naší stanice El Mirlando. Je to nadšená sportovkyně, která miluje <strong>agility</strong>. Kromě skvělé povahy vyniká čistým exteriérem, je <strong>plnochrupá</strong> a úspěšná na výstavách.</p>
+            
+            <div class="breeding-info">
+                <h3>Odchovy a aktuality</h3>
+                <p>Z prvního vrhu Attinky vzešla dvě štěňátka, ze kterých vyrostli krásní a na výstavách velmi úspěšní jedinci.</p>
+                <p class="highlight">Aktuálně máme velkou novinu: <strong>Attinka je podruhé březí!</strong></p>
+            </div>
+            
+            <button class="close-btn" onclick="closeModal('dogs')">Zpět</button>
+        </div>
+    </div>
+
+    <div id="contact" class="modal">
+        <div class="modal-content">
+            <h2>Kontaktujte El Mirlando</h2>
+            <p>Máte zájem o štěňátko z našeho plánovaného vrhu nebo se chcete dozvědět více?</p>
+            <p>📍 Lokalita: <strong>[Doplňte město/kraj]</strong></p>
+            <p>📧 Email: <strong>[Váš email]</strong></p>
+            <p>📸 Sledujte nás: <strong>[Odkaz na sociální sítě]</strong></p>
+            <button class="close-btn" onclick="closeModal('contact')">Zpět</button>
+        </div>
+    </div>
+
+    <script>
+        function openModal(id) {
+            document.getElementById(id).style.display = "flex";
+        }
+        function closeModal(id) {
+            document.getElementById(id).style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target.className === 'modal') {
+                event.target.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
