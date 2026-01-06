@@ -1,0 +1,109 @@
+/* ZÁKLADNÍ NASTAVENÍ */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #050505; /* Černý základ, kdyby se obrázek načítal pomalu */
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+    overflow-x: hidden; /* Zabrání posouvání do stran */
+}
+
+/* FINÁLNÍ KÓD PRO POZADÍ S OBRÁZKEM */
+.hero {
+    height: 100vh;
+    /* Cesta k obrázku + tmavý filtr (0.4 je síla zatmavení) */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('pozadi.jpg');
+    
+    /* Obrázek se přizpůsobí obrazovce a nebude se hýbat při scrollování */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+    /* Nastavení, aby byl text vpravo (mimo obličej pejska) */
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    padding-right: 8%; /* Mezera od pravého kraje */
+}
+
+/* STYL TEXTU NA ÚVODNÍ STRÁNCE */
+.hero-content {
+    text-align: right;
+    max-width: 600px;
+}
+
+h1 { 
+    font-size: 4rem; 
+    color: #ffd700; /* Zlatá barva názvu El Mirlando */
+    margin: 0;
+    letter-spacing: 5px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    color: #f0f0f0;
+    margin-top: 10px;
+}
+
+/* NAVIGAČNÍ MENU NAHOŘE */
+nav {
+    position: fixed;
+    top: 30px;
+    width: 100%;
+    z-index: 100;
+    text-align: center;
+}
+
+nav ul { list-style: none; padding: 0; }
+nav ul li { display: inline; margin: 0 20px; }
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffd700;
+}
+
+/* STYL PRO VYSKAKOVACÍ OKNA (MODALY) */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #111;
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 500px;
+    width: 85%;
+    text-align: center;
+    border: 1px solid #ffd700;
+}
+
+.close-btn {
+    margin-top: 20px;
+    padding: 10px 25px;
+    background: transparent;
+    border: 2px solid #ffd700;
+    color: #ffd700;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 30px;
+}
+
+.close-btn:hover {
+    background: #ffd700;
+    color: black;
